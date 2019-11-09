@@ -28,9 +28,13 @@ export const disconnected = () => {
   };
 };
 
-export const getPk = () => {
+export const getPk = (verifier, verifierId) => {
   return {
-    type: actiontypes.TORUS__GET_PK
+    type: actiontypes.TORUS__GET_PK,
+    data: {
+      verifier,
+      verifierId
+    }
   };
 };
 
