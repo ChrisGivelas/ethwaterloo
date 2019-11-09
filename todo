@@ -1,0 +1,9 @@
+V1
+    defuse to lookup chat room tokens of addresses
+    3box api messaging
+    Text box for submitting messages
+    Message history for chatroom
+    User Names pulled from 3box
+
+V2
+    Members list on left side
