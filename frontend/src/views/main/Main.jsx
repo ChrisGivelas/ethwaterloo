@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import {Link, Redirect, Route, Switch} from "react-router-dom";
 
 import withAuthorization from "../../components/hoc/withAuthorization";
@@ -10,6 +11,9 @@ import Front from "../front/Front";
 import Dashboard from "../dashboard/Dashboard";
 import Torus from "../torus/Torus";
 import WalletConnect from "../walletconnect/WalletConnect";
+
+import {web3Api} from "../../api";
+import * as threeBoxActions from '../../store/3box/3boxActions';
 
 const Links = props => (
   <div className="links">
@@ -30,20 +34,32 @@ const Links = props => (
   </div>
 );
 
-const Main = props => (
-  <main>
-    <Switch>
-      <Route exact path="/404" component={NoMatch} />
+class Main extends React.Component {
+  componentDidMount() {
+      this.props.initializeThreeBox(web3Api.getPublicAddress());
+  }
 
-      <Route exact path="/" component={withAuthorization("*")(Front)} />
-      <Route exact path="/torus" component={withAuthorization("*")(Torus)} />
-      <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
-      <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
+  render() {
+    return (
+      <main>
+        <Switch>
+          <Route exact path="/404" component={NoMatch} />
 
-      <Redirect to="/" />
-    </Switch>
-    {/* <Links /> */}
-  </main>
-);
+          <Route exact path="/" component={withAuthorization("*")(Front)} />
+          <Route exact path="/torus" component={withAuthorization("*")(Torus)} />
+          <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
+          <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
 
-export default Main;
+          <Redirect to="/" />
+        </Switch>
+        {/* <Links /> */}
+      </main>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  initializeThreeBox: (pubKey) => dispatch(threeBoxActions.connect(pubKey))
+})
+
+export default connect(null, mapDispatchToProps)(Main);
