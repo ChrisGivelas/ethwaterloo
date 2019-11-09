@@ -44,6 +44,10 @@ li {
   margin: 20px 0 20px 0;
 }
 
+.links {
+  margin: 30px 0 0 260px;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -63,7 +67,7 @@ li {
 }
 
 .sidebar-header {
-  margin: 15px 0 30px 0;
+  margin: 20px 0 30px 0;
 }
 
 .roomHeader {
@@ -107,12 +111,17 @@ li {
   }
 
   .nav-subtitle {
-    margin-top: -10px;
+    margin-top: 0px;
+    font-weight: 250;
   }
 
   .roomHeader {
     font-weight: 500;
     margin-top: 5px;
+  }
+
+  .roomDescription {
+    font-style: italic;
   }
 }
 

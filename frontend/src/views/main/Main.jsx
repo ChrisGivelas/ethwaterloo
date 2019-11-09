@@ -11,7 +11,7 @@ import Dashboard from "../dashboard/Dashboard";
 import WalletConnect from "../walletconnect/WalletConnect";
 
 const Links = props => (
-  <div>
+  <div className="links">
     <ul>
       <li>
         <Link to="/">front</Link>
