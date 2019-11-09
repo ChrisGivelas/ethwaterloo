@@ -1,0 +1,128 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+p {
+  font-family: Avenir Next;
+}
+
+li {
+  margin: 20px 0 20px 0;
+}
+
+.links {
+  margin: 30px 0 0 260px;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+  background: #1D294F;
+  color: #fff;
+  transition: all 0.3s;
+  padding-left: 30px;
+}
+
+.sidebar-header {
+  margin: 20px 0 30px 0;
+}
+
+.roomHeader {
+  font-weight: 500;
+  margin-top: 55px;
+}
+
+.roomList {
+  margin-left: 5px;
+
+  a {
+    font-family: Avenir Next;
+    font-weight: 200;
+    color: white;
+  }
+
+  .currentRoom a {
+    font-weight: 300;
+  }
+
+}
+
+.fixed-bottom p{
+  margin-left: 30px;
+}
+
+#content{
+  margin-left: 250px;
+}
+
+.top-nav {
+  background-color: #61C5A6;
+  position:absolute;
+  left:0;
+  right:0;
+
+  p {
+    margin-left: 280px;
+    margin-bottom: 0px;
+    color: white;
+  }
+
+  .nav-subtitle {
+    margin-top: 0px;
+    font-weight: 250;
+  }
+
+  .roomHeader {
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  .roomDescription {
+    font-style: italic;
+  }
+}
+
+
