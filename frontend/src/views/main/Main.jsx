@@ -40,7 +40,7 @@ const Main = props => (
       <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
       <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
 
-      <Redirect to="/404" />
+      <Redirect to="/" />
     </Switch>
     {/* <Links /> */}
   </main>

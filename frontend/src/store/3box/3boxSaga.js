@@ -2,20 +2,19 @@ import {put, takeLatest} from "redux-saga/effects";
 
 import * as api from "../../api";
 
-import * as actions from "./walletConnectActions";
 import * as actiontypes from "./actiontypes";
 
-function* connect() {
+function* connect(actions) {
   try {
-    yield api.walletConnectApi.initialize();
+    yield api.threeBoxApi.initialize(actions.payload.addr, api.torusApi.torus.provider);
     yield put(actions.connectSucceeded());
   } catch (err) {
     yield put(actions.connectFailed(err.message));
   }
 }
 
-function* walletConnectSaga() {
-  yield takeLatest(actiontypes.WALLETCONNECT_CONNECT, connect);
+function* threeBoxSaga() {
+  yield takeLatest(actiontypes.THREEBOX_CONNECT, connect);
 }
 
-export default walletConnectSaga;
+export default threeBoxSaga;
