@@ -22,6 +22,7 @@ export const configureStore = () => {
 
   // inject store into apis
   api.testApi.setStore(store);
+  api.torusApi.setStore(store);
   api.walletConnectApi.setStore(store);
 
   return store;
