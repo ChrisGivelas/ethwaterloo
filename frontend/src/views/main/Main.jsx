@@ -8,6 +8,7 @@ import NoMatch from "./components/NoMatch";
 
 import Front from "../front/Front";
 import Dashboard from "../dashboard/Dashboard";
+import Torus from "../torus/Torus";
 import WalletConnect from "../walletconnect/WalletConnect";
 
 const Links = props => (
@@ -15,6 +16,9 @@ const Links = props => (
     <ul>
       <li>
         <Link to="/">front</Link>
+      </li>
+      <li>
+        <Link to="/torus">torus</Link>
       </li>
       <li>
         <Link to="/walletconnect">walletconnect</Link>
@@ -32,6 +36,7 @@ const Main = props => (
       <Route exact path="/404" component={NoMatch} />
 
       <Route exact path="/" component={withAuthorization("*")(Front)} />
+      <Route exact path="/torus" component={withAuthorization("*")(Torus)} />
       <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
       <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
 
