@@ -2,6 +2,7 @@ import React from "react";
 import dfuse from './img/dfuse.png';
 import torus from './img/torus.png';
 import unlock from './img/unlock.png';
+import threebox from './img/3box.png';
 
 const Sidebar = props => {
   return (
@@ -49,6 +50,7 @@ const Sidebar = props => {
         <img className="dfuse" src={dfuse} alt="dfuse" />
         <img className="torus" src={torus} alt="torus" />
         <br></br>
+        <img className="threebox" src={threebox} alt="3box" />
         <img className="unlock" src={unlock} alt="unlock" />
       </div>
     </nav>
