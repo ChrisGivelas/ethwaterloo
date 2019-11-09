@@ -42,7 +42,7 @@ const Main = props => (
 
       <Redirect to="/404" />
     </Switch>
-    <Links />
+    {/* <Links /> */}
   </main>
 );
 
