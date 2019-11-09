@@ -1,15 +1,21 @@
-import {put, takeLatest} from "redux-saga/effects";
+import {put, takeLatest, select} from "redux-saga/effects";
 
 import * as api from "../../api";
 
 import * as actions from "./torusActions";
 import * as actiontypes from "./actiontypes";
 
+import * as threeBoxActions from "../3box/3boxActions";
+
 function* connect() {
   try {
     yield api.torusApi.initialize();
     yield put(actions.connectSucceeded());
     yield put(actions.getPk());
+
+    //Initialize 3box
+    let pk = yield select(state => state.torus.pk);
+    yield put(threeBoxActions.connect(pk));
   } catch (err) {
     err = typeof err === "string" ? err : err.message;
     yield put(actions.connectFailed(err));

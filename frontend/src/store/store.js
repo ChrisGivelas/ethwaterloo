@@ -24,6 +24,7 @@ export const configureStore = () => {
   api.testApi.setStore(store);
   api.torusApi.setStore(store);
   api.walletConnectApi.setStore(store);
+  api.threeBoxApi.setStore(store);
 
   return store;
 };
