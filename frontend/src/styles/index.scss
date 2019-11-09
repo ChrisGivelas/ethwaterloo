@@ -69,3 +69,20 @@ li {
 .roomHeader {
   font-weight: 500;
 }
+
+.roomList {
+  margin-left: 5px;
+
+  a {
+    font-family: Avenir Next;
+    font-weight: 200;
+    color: white;
+  }
+
+  .currentRoom a {
+    font-weight: 300;
+  }
+
+}
+
+
