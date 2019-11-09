@@ -1,5 +1,5 @@
 import React from "react";
 
-const Front = props => <div>front</div>;
+const Front = props => <section>front</section>;
 
 export default Front;

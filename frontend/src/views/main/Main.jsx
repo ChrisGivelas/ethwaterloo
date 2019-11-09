@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect, Route, Switch} from "react-router-dom";
+import {Link, Redirect, Route, Switch} from "react-router-dom";
 
 import withAuthorization from "../../components/hoc/withAuthorization";
 
@@ -10,16 +10,36 @@ import Front from "../front/Front";
 import Dashboard from "../dashboard/Dashboard";
 import WalletConnect from "../walletconnect/WalletConnect";
 
+const Links = props => (
+  <div>
+    <ul>
+      <li>
+        <Link to="/">front</Link>
+      </li>
+      <li>
+        <Link to="/walletconnect">walletconnect</Link>
+      </li>
+      <li>
+        <Link to="/dashboard">dashboard</Link>
+      </li>
+    </ul>
+  </div>
+);
+
 const Main = props => (
-  <Switch>
-    <Route exact path="/404" component={NoMatch} />
+  <main>
+    <Links />
 
-    <Route exact path="/" component={withAuthorization("*")(Front)} />
-    <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
-    <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
+    <Switch>
+      <Route exact path="/404" component={NoMatch} />
 
-    <Redirect to="/404" />
-  </Switch>
+      <Route exact path="/" component={withAuthorization("*")(Front)} />
+      <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
+      <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
+
+      <Redirect to="/404" />
+    </Switch>
+  </main>
 );
 
 export default Main;
