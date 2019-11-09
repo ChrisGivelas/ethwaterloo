@@ -63,11 +63,12 @@ li {
 }
 
 .sidebar-header {
-  margin: 30px 0 30px 0;
+  margin: 15px 0 30px 0;
 }
 
 .roomHeader {
   font-weight: 500;
+  margin-top: 55px;
 }
 
 .roomList {
@@ -83,6 +84,36 @@ li {
     font-weight: 300;
   }
 
+}
+
+.fixed-bottom p{
+  margin-left: 30px;
+}
+
+#content{
+  margin-left: 250px;
+}
+
+.top-nav {
+  background-color: #61C5A6;
+  position:absolute;
+  left:0;
+  right:0;
+
+  p {
+    margin-left: 280px;
+    margin-bottom: 0px;
+    color: white;
+  }
+
+  .nav-subtitle {
+    margin-top: -10px;
+  }
+
+  .roomHeader {
+    font-weight: 500;
+    margin-top: 5px;
+  }
 }
 
 
