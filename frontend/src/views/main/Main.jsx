@@ -11,7 +11,7 @@ import Dashboard from "../dashboard/Dashboard";
 import WalletConnect from "../walletconnect/WalletConnect";
 
 const Links = props => (
-  <div>
+  <div className="links">
     <ul>
       <li>
         <Link to="/">front</Link>
@@ -28,8 +28,6 @@ const Links = props => (
 
 const Main = props => (
   <main>
-    <Links />
-
     <Switch>
       <Route exact path="/404" component={NoMatch} />
 
@@ -39,6 +37,7 @@ const Main = props => (
 
       <Redirect to="/404" />
     </Switch>
+    <Links />
   </main>
 );
 
