@@ -144,10 +144,6 @@ li {
   }
 }
 
-#content{
-  margin: 70px 0 0 250px;
-}
-
 #LoginOverlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 100%;
@@ -181,3 +177,38 @@ li {
 .loginTagLine {
   margin-top: 50px;
 }
+
+#content{
+  margin: 70px 0 0 280px;
+  width: 100%;
+
+  .username {
+    font-weight: 500;
+  }
+
+  .timestamp{
+    font-weight: 200;
+    margin-left: 20px;
+  }
+
+  .messageText {
+    font-weight: 250;
+  }
+
+  .form-group {
+    padding-right: 30px;
+    padding-left: 280px;
+    font-family: Avenir Next;
+    font-size: 16px !important;
+  }
+
+  .form-control:focus{
+    box-shadow: 0 0 5px #61C5A6 !important;
+    border-color: #61C5A6;
+  }
+
+}
+
+
+
+

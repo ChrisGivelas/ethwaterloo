@@ -8,7 +8,7 @@ const Front = props => {
   return (
     <section>
       <div className="wrapper">
-        <LoginOverlay></LoginOverlay>
+        {/* <LoginOverlay></LoginOverlay> */}
         <Sidebar></Sidebar>
         <TopNav></TopNav>
         <ChatArea></ChatArea>
