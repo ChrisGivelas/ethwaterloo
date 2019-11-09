@@ -33,7 +33,7 @@ const Front = props => {
                   <li>
                       <a href="#">#ETHDever</a>
                   </li>
-                  <li>
+                  <li className="currentRoom">
                       <a href="#">#ETHWaterloo</a>
                   </li>
                   <li>
