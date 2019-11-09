@@ -1,4 +1,7 @@
 import React from "react";
+import dfuse from './img/dfuse.png';
+import torus from './img/torus.png';
+import unlock from './img/unlock.png';
 
 const Sidebar = props => {
   return (
@@ -43,6 +46,10 @@ const Sidebar = props => {
       </ul>
       <div className="fixed-bottom">
         <p>Powered by:</p>
+        <img className="dfuse" src={dfuse} alt="dfuse" />
+        <img className="torus" src={torus} alt="torus" />
+        <br></br>
+        <img className="unlock" src={unlock} alt="unlock" />
       </div>
     </nav>
   )
