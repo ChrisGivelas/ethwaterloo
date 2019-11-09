@@ -1,6 +1,5 @@
 import React from "react";
 import {connect} from 'react-redux';
-import {PublicBox, PrivateBox} from '../../api/_3BoxApi';
 
 import Spinner from '../../components/Spinner';
 
