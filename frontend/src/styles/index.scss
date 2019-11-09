@@ -64,6 +64,25 @@ li {
   color: #fff;
   transition: all 0.3s;
   padding-left: 30px;
+
+  .dfuse {
+
+  }
+
+  img {
+    width: 90px;
+    margin-top: -25px;
+  }
+
+  .dfuse {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .unlock {
+    margin: -10px 25px 30px 30px;
+    width: 45px;
+  }
 }
 
 .sidebar-header {
@@ -94,10 +113,6 @@ li {
   margin-left: 30px;
 }
 
-#content{
-  margin-left: 250px;
-}
-
 .top-nav {
   background-color: #61C5A6;
   position:absolute;
@@ -125,4 +140,7 @@ li {
   }
 }
 
+#content{
+  margin: 70px 0 0 250px;
+}
 
