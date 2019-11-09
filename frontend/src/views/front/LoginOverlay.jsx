@@ -30,9 +30,7 @@ const LoginOverlay = props => {
           </span>
           <br></br>
           <br></br>
-
-            <Button.Outline className="torusButton">Connect with Torus</Button.Outline>
-
+          <Button.Outline className="torusButton">Connect with Torus</Button.Outline>
         </Card>
       </div>
     </div>
