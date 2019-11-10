@@ -16,7 +16,7 @@ const ChatArea = props => {
         </span>
         <br></br>
         <span className="messageText">
-          Does anyone know where the bathroom is? I have been dying for 27 hours!!
+          Does anyone know where lunch is? I haven't eaten for 27 hours!! I am getting mad hangry...
         </span>
       </p>
       <br/>
@@ -30,7 +30,7 @@ const ChatArea = props => {
         </span>
         <br></br>
         <span className="messageText">
-          Dude that’s disgusting. I have just spend a unique 27 minutes in there
+          Dude get a grip. It's down the hall. Second left at half past breakfast.
         </span>
       </p>
       <br/>
