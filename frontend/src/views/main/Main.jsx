@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import {Link, Redirect, Route, Switch} from "react-router-dom";
 
 import withAuthorization from "../../components/hoc/withAuthorization";
@@ -13,7 +13,7 @@ import Torus from "../torus/Torus";
 import WalletConnect from "../walletconnect/WalletConnect";
 
 import {web3Api} from "../../api";
-import * as threeBoxActions from '../../store/3box/3boxActions';
+import * as threeBoxActions from "../../store/3box/3boxActions";
 
 const Links = props => (
   <div className="links">
@@ -36,7 +36,7 @@ const Links = props => (
 
 class Main extends React.Component {
   componentDidMount() {
-      this.props.initializeThreeBox(web3Api.getPublicAddress());
+    // this.props.initializeThreeBox(web3Api.getPublicAddress());
   }
 
   render() {
@@ -59,7 +59,10 @@ class Main extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  initializeThreeBox: (pubKey) => dispatch(threeBoxActions.connect(pubKey))
-})
+  initializeThreeBox: pubKey => dispatch(threeBoxActions.connect(pubKey))
+});
 
-export default connect(null, mapDispatchToProps)(Main);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Main);
