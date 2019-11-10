@@ -41,7 +41,7 @@ const Sidebar = props => {
                 <a href="#">#ETHWhatever-you-want</a>
             </li>
             <li>
-                <a href="#">+</a>
+                <a href="/dashboard">+</a>
             </li>
           </div>
       </ul>

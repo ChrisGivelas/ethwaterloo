@@ -1,14 +1,45 @@
 const Box = require("3box");
 
+class Thread {
+  constructor(name, space) {
+    this.name = name;
+    this.thread = space.joinThread(name, {
+      ghost: true
+    });
+
+    this.posts = this.thread.then(thread => thread.getPosts());
+
+    this.thread.onUpdate(() => {
+      this.posts = this.thread.getPosts()
+    })
+  }
+
+  getPosts = async () => {
+    return await this.thread.getPosts();
+  }
+
+  addPost = async (post) => {
+    await this.thread.post(post);
+  }
+}
+
 class Space {
   constructor(name, box) {
     this.name = name;
+    this.threads = {};
     this.syncDone = false;
     this.space = box.openSpace(name).then(space => {
       this.syncDone = space.syncDone;
       return space;
     });
   }
+
+  joinThread = async threadName => {
+    if (!this.threads[threadName]) {
+      this.threads.threadName = new Thread(threadName, this.space);
+    }
+    return this.threads.threadName;
+  };
 }
 
 export class ThreeBoxApi {
@@ -28,9 +59,9 @@ export class ThreeBoxApi {
     return await Box.getThread(spaceName, threadName, firstModerator, membersThread);
   };
 
-  setStore = (store) => {
+  setStore = store => {
     this.store = store;
-  }
+  };
 
   initialize = (addr, provider) => {
     this.addr = addr;
@@ -39,12 +70,6 @@ export class ThreeBoxApi {
     this.box = Box.openBox(addr, provider).then(box => {
       this.syncDone = box.syncDone;
       return box;
-    });
-  }
-
-  query = async (queryFunc, ...args) => {
-    return await Promise.all([this.box, this.syncDone]).then(results => {
-      return results[0][queryFunc](args);
     });
   };
 
