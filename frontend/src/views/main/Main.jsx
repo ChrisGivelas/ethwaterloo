@@ -36,7 +36,7 @@ const Links = props => (
 
 class Main extends React.Component {
   componentDidMount() {
-      this.props.initializeThreeBox(web3Api.getPublicAddress());
+      // this.props.initializeThreeBox(web3Api.getPublicAddress());
   }
 
   render() {
@@ -48,7 +48,7 @@ class Main extends React.Component {
           <Route exact path="/" component={withAuthorization("*")(Front)} />
           <Route exact path="/torus" component={withAuthorization("*")(Torus)} />
           <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
-          <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
+          <Route path="/dashboard" component={withAuthorization("*")(Dashboard, Forbidden)} />
 
           <Redirect to="/" />
         </Switch>
