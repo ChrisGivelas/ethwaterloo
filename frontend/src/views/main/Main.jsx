@@ -38,10 +38,10 @@ class Main extends React.Component {
     return (
       <main>
         <Switch>
-          <Route exact path="/" component={Front} />
+          <Route exact path="/" component={Dashboard} />
           <Route exact path="/torus" component={Torus} />
           <Route exact path="/walletconnect" component={WalletConnect} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Front} />
           <Route
             exact
             path="/room/:roomName"
