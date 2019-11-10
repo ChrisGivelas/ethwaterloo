@@ -1,14 +1,14 @@
-import { createDfuseClient } from "@dfuse/client";
+import {createDfuseClient} from "@dfuse/client";
 
 const dFuseClient = createDfuseClient({
   apiKey: "web_47d20cf6a437bc135a12b9b613db5bb4",
-  network: "mainnet.eth.dfuse.io",
+  network: "mainnet.eth.dfuse.io"
 });
 
-export const query = async (operation) => {
-    let message = await dFuseClient.graphql(operation);
-    console.log(message);
-    return message
+export const query = async operation => {
+  let message = await dFuseClient.graphql(operation);
+  console.log(message);
+  return message;
 };
 
 const checkWalletForKeyQuery = (userAddr, contractAddr) => `query{
@@ -18,6 +18,7 @@ const checkWalletForKeyQuery = (userAddr, contractAddr) => `query{
         node {
           from
           to
+          value
           allLogs {
             topics
             address
@@ -26,12 +27,12 @@ const checkWalletForKeyQuery = (userAddr, contractAddr) => `query{
         }
       }
     }
-  }`
+  }`;
 
 export const checkWalletForKey = async (userAddr, contractAddr) => {
-    let operation = checkWalletForKeyQuery(userAddr, contractAddr);
+  let operation = checkWalletForKeyQuery(userAddr, contractAddr);
 
-    return await query(operation);
-}
+  return await query(operation);
+};
 
 export default dFuseClient;
