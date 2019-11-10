@@ -1,8 +1,6 @@
 import Torus from "@toruslabs/torus-embed";
 import Web3 from "web3";
 
-import * as torusActions from "../store/torus/torusActions";
-
 export class TorusApi {
   constructor(web3Api) {
     this.web3Api = web3Api;

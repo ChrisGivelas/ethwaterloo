@@ -21,6 +21,7 @@ export const configureStore = () => {
   sagaMiddleware.run(rootSaga);
 
   // inject store into apis
+  api.metamaskApi.setStore(store);
   api.testApi.setStore(store);
   api.torusApi.setStore(store);
   api.walletConnectApi.setStore(store);
