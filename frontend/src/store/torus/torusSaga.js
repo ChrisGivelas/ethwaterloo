@@ -1,4 +1,4 @@
-import {put, takeLatest, select} from "redux-saga/effects";
+import {put, takeLatest, all} from "redux-saga/effects";
 
 import * as api from "../../api";
 
@@ -26,8 +26,10 @@ function* getPk(action) {
 }
 
 function* torusSaga() {
-  yield takeLatest(actiontypes.TORUS__CONNECT, connect);
-  yield takeLatest(actiontypes.TORUS__GET_PK, getPk);
+  yield all([
+    takeLatest(actiontypes.TORUS__CONNECT, connect),
+    takeLatest(actiontypes.TORUS__GET_PK, getPk)
+  ])
 }
 
 export default torusSaga;

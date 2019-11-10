@@ -3,9 +3,10 @@ import produce from "immer";
 import * as actiontypes from "./actiontypes";
 
 export const initialState = {
-  profile: undefined,
-  spaces: undefined,
-  threads: undefined
+  isConnected: null,
+  profile: null,
+  spaces: null,
+  threads: null
 };
 
 export const threeBoxReducer = (state = initialState, action) =>

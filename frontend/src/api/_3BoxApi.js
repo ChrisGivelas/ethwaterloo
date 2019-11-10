@@ -9,12 +9,6 @@ class Space {
       return space;
     });
   }
-
-  querySpace = async (queryFunc, ...args) => {
-    return await Promise.all([this.space, this.syncDone]).then(results => {
-      return results[0][queryFunc](args);
-    });
-  };
 }
 
 export class ThreeBoxApi {
@@ -22,11 +16,11 @@ export class ThreeBoxApi {
     return await Box.getProfile(addr);
   };
 
-  static getAddressSpaces = async addr => {
+  static listSpaces = async addr => {
     return await Box.listSpaces(addr);
   };
 
-  static getAddressSpace = async (addr, spaceName) => {
+  static getSpace = async (addr, spaceName) => {
     return await Box.getSpace(addr, spaceName);
   };
 
