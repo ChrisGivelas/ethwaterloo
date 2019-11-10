@@ -4,7 +4,7 @@ const TopNav = props => {
   return (
     <div className="top-nav">
       <div>
-        <p className="roomHeader"> #ETHWaterloo</p>
+        <p className="roomHeader"> #{window.location.href.slice(27)}</p>
         <p className="nav-subtitle">247 eligible roomies, 12 active ︱ <span className="roomDescription">This room is open for any ETHWaterloo token holders</span></p>
       </div>
     </div>
