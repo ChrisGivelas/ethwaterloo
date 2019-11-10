@@ -7,6 +7,13 @@ Users can generate their own rooms by minting tokens and opening corresponding r
 
 ---
 
+![Dashboard](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/dashboard.png "Dashboard")
+
+![Room](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/EthWaterlooRoom.png "Room")
+
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
