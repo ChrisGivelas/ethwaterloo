@@ -5,10 +5,8 @@ const dFuseClient = createDfuseClient({
   network: "mainnet.eth.dfuse.io"
 });
 
-export const query = async operation => {
-  let message = await dFuseClient.graphql(operation);
-  console.log(message);
-  return message;
+export const query = operation => {
+  return dFuseClient.graphql(operation);
 };
 
 const checkWalletForKeyQuery = (userAddr, contractAddr) => `query{
@@ -29,10 +27,11 @@ const checkWalletForKeyQuery = (userAddr, contractAddr) => `query{
     }
   }`;
 
-export const checkWalletForKey = async (userAddr, contractAddr) => {
+export const checkWalletForKey = (userAddr, contractAddr) => {
+  debugger;
   let operation = checkWalletForKeyQuery(userAddr, contractAddr);
 
-  return await query(operation);
+  return query(operation);
 };
 
 export default dFuseClient;

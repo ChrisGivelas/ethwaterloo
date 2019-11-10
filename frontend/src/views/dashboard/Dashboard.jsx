@@ -1,13 +1,47 @@
 import React from "react";
+import {connect} from "react-redux";
 import {Card, Button} from "rimble-ui";
+
+import * as dFuseApi from "../../api/_DFuseApi";
 
 import ethGlobal from "./img/ethGlobal.png";
 import addRoom from "./img/addRoom.png";
 
+import LoginOverlay from "./LoginOverlay";
+
 class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkingIsAllowed: null,
+      allowed: null
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      (!!prevProps.torus.pk === false && this.props.torus.pk) ||
+      (!!prevProps.metamask.pk === false && this.props.metamask.pk)
+    ) {
+      this.setState({checkingIsAllowed: true}, () => {
+        dFuseApi.checkWalletForKey(this.props.torus.pk || this.props.metamask.pk, null).then(res => {
+          this.setState({allowed: !!res.data.searchTransactions.edges.length, checkingIsAllowed: false});
+        });
+      });
+    }
+  }
+
   render() {
+    if (this.state.allowed === false && this.state.checkingIsAllowed === false) {
+      return "Not allowed";
+    }
+
     return (
       <div>
+        {((!this.props.torus.isConnected && !this.props.metamask.isConnected) || this.state.checkingIsAllowed) && (
+          <LoginOverlay />
+        )}
+
         <p className="dashboard-title">
           <svg width="228px" height="36px" viewBox="0 0 228 36" version="1.1">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -101,5 +135,9 @@ class Dashboard extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({torus: state.torus, metamask: state.metamask});
+
+Dashboard = connect(mapStateToProps)(Dashboard);
 
 export default Dashboard;
