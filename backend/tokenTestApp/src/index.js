@@ -30,10 +30,11 @@ const App = {
     const status = document.getElementById("status");
     status.innerHTML = message;
   },
-
+  
   createRoomToken: async function() {
 
-    const { createRoomToken } = this.meta.methods;
+    const { createRoomToken, registerRoom, addRoomOwner } = this.meta.methods;
+    
     const name = "RoomToBeNamed"; //document.getElementById("starName").value;
     const id = 1; //document.getElementById("starId").value;
     
