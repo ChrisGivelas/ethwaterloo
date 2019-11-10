@@ -114,7 +114,7 @@ class Dashboard extends React.Component {
                 <img className="ethGlobal" src={ethGlobal} alt="ethGlobal" />
                 <p className="text-center">ETHWaterloo</p>
                 <p className="text-center enterRoomButton">
-                  <a href="./">
+                  <a href="./room/ETHWaterloo">
                     <Button>Enter room</Button>
                   </a>
                 </p>

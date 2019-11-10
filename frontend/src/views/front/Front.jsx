@@ -25,9 +25,9 @@ class Front extends React.Component {
       <section>
         <div className="wrapper">
           {/* {!this.props.torus.isConnected && !this.props.metamask.isConnected && this.state.allowed && <LoginOverlay />} */}
-          <Sidebar />
-          <TopNav />
-          <ChatArea />
+          {/* <Sidebar />
+          <TopNav /> */}
+          {/* <ChatArea /> */}
         </div>
       </section>
     );

@@ -94,6 +94,11 @@ export default class Sidebar extends React.Component {
                 #ETHWaterloo
               </NavLink>
             </li>
+            <li>
+              <a href="./">
+                +
+              </a>
+            </li>
           </div>
         </ul>
         <div className="fixed-bottom">

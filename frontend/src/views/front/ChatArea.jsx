@@ -2,6 +2,8 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 import _ from "lodash";
 import Message from "./Message";
+import Sidebar from "./Sidebar";
+import TopNav from "./TopNav";
 
 class ChatArea extends React.Component {
   constructor(props) {
@@ -44,6 +46,9 @@ class ChatArea extends React.Component {
 
     if (room && room.history) {
       return (
+        <div>
+        <Sidebar />
+        <TopNav />
         <div id="content">
           {room.history.map(messageInfo => <Message {...messageInfo} />)}
           <div className="form-group fixed-bottom">
@@ -56,6 +61,7 @@ class ChatArea extends React.Component {
             />
             <input id="hiddenSubmit" type="hidden" onClick={this.onSubmit}/>
           </div>
+        </div>
         </div>
       );
     } else {
