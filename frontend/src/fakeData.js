@@ -2,22 +2,30 @@ import faker from 'faker';
 
 import user1Img from './views/front/img/user1.png';
 import user2Img from './views/front/img/user2.png';
+import currentUserImg from './views/front/img/currentUser.png';
 
 const ETHBoston = "ETHBoston";
 const ETHDenver = "ETHDenver";
 const ETHWaterloo = "ETHWaterloo";
 
-const user1 = {
+export const user1 = {
     src: user1Img,
     className: "user1",
     addr: "0x005b661B34Cb13E4023A26048eB6440a9e1d611B"
 };
 
-const user2 = {
+export const user2 = {
     src: user2Img,
     className: "user2",
     addr: "0xB0ad425cA5792DD4C4Af9177c636e5b0e6c31999"
 };
+
+export const currentUser = {
+    src: currentUserImg,
+    className: "user2"
+}
+
+export const generateFakeTimestamp = () => faker.date.past();
 
 export const generateFakeRoom = (roomName, size) => {
     let room = {roomName, history: []};
