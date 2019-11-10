@@ -10,8 +10,8 @@ function* connect() {
     yield api.torusApi.initialize();
     yield put(actions.connectSucceeded());
   } catch (err) {
-    err = typeof err === "string" ? err : err.message;
-    yield put(actions.connectFailed(err));
+    let errorMsg = typeof err === "string" ? err : err.message;
+    yield put(actions.connectFailed(errorMsg));
   }
 }
 
@@ -20,8 +20,8 @@ function* getPk(action) {
     let pk = yield api.torusApi.getPublicAddress(action.data.verifier, action.data.verifierId);
     yield put(actions.getPkSucceeded(pk));
   } catch (err) {
-    err = typeof err === "string" ? err : err.message;
-    yield put(actions.getPkFailed(err));
+    let errorMsg = typeof err === "string" ? err : err.message;
+    yield put(actions.getPkFailed(errorMsg));
   }
 }
 
