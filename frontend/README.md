@@ -11,6 +11,7 @@ Users can generate their own rooms by minting tokens and opening corresponding r
 
 ![Room](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/EthWaterlooRoom.png "Room")
 
+![Login](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/Login.png "Login")
 
 ---
 
