@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, Button } from 'rimble-ui';
+import ethGlobal from './img/ethGlobal.png';
+import addRoom from './img/addRoom.png';
 
 class Dashboard extends React.Component {
   render() {
@@ -22,10 +24,32 @@ class Dashboard extends React.Component {
               </g>
           </svg>
         </p>
-          <Card width={"420px"} mx={"auto"} px={4}>
-            <p>ETHWaterloo</p>
-            <Button>Enter room</Button>
-          </Card>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm">
+            <Card width={"320px"} mx={"auto"} px={4}>
+              <img className="ethGlobal" src={ethGlobal} alt="ethGlobal" />
+              <p className="text-center">
+                ETHWaterloo
+              </p>
+              <p className="text-center enterRoomButton">
+                <Button>Enter room</Button>
+              </p>
+            </Card>
+            </div>
+            <div className="col-sm">
+              <Card width={"320px"} mx={"auto"} px={4}>
+                <img className="addRoom" src={addRoom} alt="addRoom" />
+                <p className="text-center">
+                  New room
+                </p>
+                <p className="text-center enterRoomButton">
+                  <Button>Create room</Button>
+                </p>
+              </Card>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
