@@ -12,7 +12,6 @@ import Dashboard from "../dashboard/Dashboard";
 import Torus from "../torus/Torus";
 import WalletConnect from "../walletconnect/WalletConnect";
 
-import {web3Api} from "../../api";
 import * as threeBoxActions from "../../store/3box/3boxActions";
 
 const Links = props => (
@@ -35,10 +34,6 @@ const Links = props => (
 );
 
 class Main extends React.Component {
-  componentDidMount() {
-    // this.props.initializeThreeBox(web3Api.getPublicAddress());
-  }
-
   render() {
     return (
       <main>
