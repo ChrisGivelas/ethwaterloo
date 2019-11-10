@@ -6,7 +6,7 @@ const Message = props => {
     <p>
       <img className={className} src={src} alt={className} />
       <span className="username">{addr}</span>
-      <span className="timestamp">{timestamp}</span>
+      <span className="timestamp">{timestamp.toString()}</span>
       <br/>
       <span className="messageText">{text}</span>
     </p>
