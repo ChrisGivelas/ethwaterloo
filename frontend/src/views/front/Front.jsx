@@ -11,7 +11,7 @@ class Front extends React.Component {
     return (
       <section>
         <div className="wrapper">
-          {this.props.torus.isConnected && <LoginOverlay />}
+          {!this.props.torus.isConnected && <LoginOverlay />}
           <Sidebar></Sidebar>
           <TopNav></TopNav>
           <ChatArea></ChatArea>
