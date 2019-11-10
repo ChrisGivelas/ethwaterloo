@@ -10,7 +10,7 @@ import WalletConnect from "../walletconnect/WalletConnect";
 import ChatArea from "../front/ChatArea";
 
 import fakeData, {currentUser, generateFakeTimestamp} from "../../fakeData";
-import { web3Api } from "../../api";
+import {web3Api} from "../../api";
 
 class Main extends React.Component {
   constructor(props) {
@@ -22,14 +22,16 @@ class Main extends React.Component {
   }
 
   addMessage = (roomName, msg) => {
-    this.setState(produce(this.state, draft => {
-      draft.rooms[roomName].history.push({
-        ...currentUser,
-        timestamp: generateFakeTimestamp(),
-        addr: web3Api.publicAddress,
-        text: msg
+    this.setState(
+      produce(this.state, draft => {
+        draft.rooms[roomName].history.push({
+          ...currentUser,
+          timestamp: generateFakeTimestamp(),
+          addr: web3Api.publicAddress,
+          text: msg
+        });
       })
-    }));
+    );
   };
 
   render() {
