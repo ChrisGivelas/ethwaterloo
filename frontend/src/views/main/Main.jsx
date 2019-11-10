@@ -34,17 +34,6 @@ const Links = props => (
 );
 
 class Main extends React.Component {
-  componentDidMount() {
-    if(this.props.pk)
-      this.props.initializeThreeBox(this.props.pk);
-  }
-
-  componentDidUpdate(prevProps) {
-    if(!prevProps.pk && this.props.pk){
-      this.props.initializeThreeBox(this.props.pk);
-    }
-  }
-
   render() {
     return (
       <main>
@@ -64,24 +53,4 @@ class Main extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  let select = {};
-
-  if(state.torus.pk) {
-    select.pk = state.torus.pk;
-  }
-  // else if(state.metamask.pk) {
-  //   select.pk = state.metamask.pk;
-  // }
-
-  return select;
-};
-
-const mapDispatchToProps = dispatch => ({
-  initializeThreeBox: pubKey => dispatch(threeBoxActions.connect(pubKey))
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Main);
+export default Main;
