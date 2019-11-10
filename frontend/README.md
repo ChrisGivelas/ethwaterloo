@@ -1,3 +1,20 @@
+# Etheroom
+Etheroom is a chat room application that allows user access based on token ownership.
+
+For example, owners of the ETHWaterloo token are allowed access to the ETHWaterloo chatroom.
+
+Users can generate their own rooms by minting tokens and opening corresponding rooms.
+
+---
+
+![Dashboard](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/dashboard.png "Dashboard")
+
+![Login](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/Login.png "Login")
+
+![Room](https://github.com/ChrisGivelas/ethwaterloo/blob/master/designs/EthWaterlooRoom.png "Room")
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

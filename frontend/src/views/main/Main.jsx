@@ -43,7 +43,7 @@ class Main extends React.Component {
           <Route exact path="/" component={withAuthorization("*")(Front)} />
           <Route exact path="/torus" component={withAuthorization("*")(Torus)} />
           <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
-          <Route path="/dashboard" component={withAuthorization(["user"])(Dashboard, Forbidden)} />
+          <Route path="/dashboard" component={withAuthorization("*")(Dashboard, Forbidden)} />
 
           <Redirect to="/" />
         </Switch>
@@ -53,11 +53,4 @@ class Main extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  initializeThreeBox: pubKey => dispatch(threeBoxActions.connect(pubKey))
-});
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Main);
+export default Main;
