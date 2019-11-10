@@ -11,7 +11,7 @@ class Front extends React.Component {
     return (
       <section>
         <div className="wrapper">
-          {!this.props.torus.isConnected && <LoginOverlay />}
+          {(!this.props.torus.isConnected || !this.props.metamask.isConnected) && <LoginOverlay />}
           <Sidebar></Sidebar>
           <TopNav></TopNav>
           <ChatArea></ChatArea>
@@ -21,7 +21,7 @@ class Front extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({torus: state.torus});
+const mapStateToProps = state => ({torus: state.torus, metamask: state.metamask});
 
 const mapDispatchToProps = dispatch => ({});
 

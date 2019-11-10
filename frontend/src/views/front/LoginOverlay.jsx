@@ -84,7 +84,7 @@ class LoginOverlay extends React.Component {
             <div className="loginTagLine">Connect to your wallet:</div>
             <br></br>
             <span className="metaMaskButton">
-              <MetaMaskButton.Outline fullWidth disabled={!!window.ethereum} onClick={this.props.metamaskConnect}>
+              <MetaMaskButton.Outline fullWidth disabled={!window.ethereum} onClick={this.props.metamaskConnect}>
                 Connect with MetaMask
               </MetaMaskButton.Outline>
             </span>
