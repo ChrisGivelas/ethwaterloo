@@ -8,7 +8,7 @@ import * as actiontypes from './actiontypes';
 
 function* connect(action) {
   try {
-    // yield api.threeBoxApi.initialize(action.payload.addr, api.web3Api.web3);
+    yield api.threeBoxApi.initialize(action.payload.addr[0], window.web3.currentProvider);
     yield put(actions.connectSucceeded());
     yield
   } catch (err) {
