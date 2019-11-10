@@ -23,11 +23,8 @@ class Front extends React.Component {
 
 const mapStateToProps = state => ({torus: state.torus, metamask: state.metamask});
 
-const mapDispatchToProps = dispatch => ({});
-
 Front = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Front);
 
 export default Front;
