@@ -1,8 +1,6 @@
 import Torus from "@toruslabs/torus-embed";
 import Web3 from "web3";
 
-import * as torusActions from "../store/torus/torusActions";
-
 export class TorusApi {
   constructor(web3Api) {
     this.web3Api = web3Api;
@@ -20,7 +18,6 @@ export class TorusApi {
       .init(initParams)
       .then(() => this.torus.login())
       .then(pk => {
-        this.store.dispatch(torusActions.getPkSucceeded(pk));
         this.web3 = new Web3(this.torus.provider);
         this.web3Api.setWeb3(this.web3);
         this.web3Api.setPublicAddress(pk);

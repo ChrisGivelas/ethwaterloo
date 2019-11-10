@@ -3,7 +3,8 @@ import {connect} from "react-redux";
 import {Card, MetaMaskButton, Button} from "rimble-ui";
 
 import * as api from "../../api";
-import * as actions from "../../store/torus/torusActions";
+import * as metamaskActions from "../../store/metamask/metamaskActions";
+import * as torusActions from "../../store/torus/torusActions";
 
 class LoginOverlay extends React.Component {
   componentDidMount() {
@@ -83,7 +84,9 @@ class LoginOverlay extends React.Component {
             <div className="loginTagLine">Connect to your wallet:</div>
             <br></br>
             <span className="metaMaskButton">
-              <MetaMaskButton.Outline fullWidth>Connect with MetaMask</MetaMaskButton.Outline>
+              <MetaMaskButton.Outline fullWidth disabled={!!window.ethereum} onClick={this.props.metamaskConnect}>
+                Connect with MetaMask
+              </MetaMaskButton.Outline>
             </span>
             <br></br>
             <br></br>
@@ -98,10 +101,14 @@ class LoginOverlay extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({torus: state.torus});
+const mapStateToProps = state => ({
+  metamask: state.metamask,
+  torus: state.torus
+});
 
 const mapDispatchToProps = dispatch => ({
-  torusConnect: () => dispatch(actions.connect())
+  metamaskConnect: () => dispatch(metamaskActions.connect()),
+  torusConnect: () => dispatch(torusActions.connect())
 });
 
 LoginOverlay = connect(
