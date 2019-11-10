@@ -18,7 +18,7 @@ class LoginOverlay extends React.Component {
         <div className="loginCard">
           <Card width={"600px"} mx={"auto"} px={4}>
             <svg width="228px" height="36px" viewBox="0 0 228 36" version="1.1">
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="Colour-palette" transform="translate(-786.000000, -878.000000)">
                   <g id="Group" transform="translate(787.000000, 872.000000)">
                     <line
@@ -28,8 +28,8 @@ class LoginOverlay extends React.Component {
                       y2="10.0088408"
                       id="Line"
                       stroke="#526EEC"
-                      stroke-width="4"
-                      stroke-linecap="square"
+                      strokeWidth="4"
+                      strokeLinecap="square"
                       transform="translate(3.482654, 24.706955) rotate(0.855097) translate(-3.482654, -24.706955) "
                     ></line>
                     <line
@@ -39,8 +39,8 @@ class LoginOverlay extends React.Component {
                       y2="23.1642722"
                       id="Line"
                       stroke="#E06395"
-                      stroke-width="4"
-                      stroke-linecap="square"
+                      strokeWidth="4"
+                      strokeLinecap="square"
                       transform="translate(10.500000, 23.134313) rotate(0.855097) translate(-10.500000, -23.134313) "
                     ></line>
                     <line
@@ -50,8 +50,8 @@ class LoginOverlay extends React.Component {
                       y2="8.16427219"
                       id="Line"
                       stroke="#61C5A6"
-                      stroke-width="4"
-                      stroke-linecap="square"
+                      strokeWidth="4"
+                      strokeLinecap="square"
                       transform="translate(11.500000, 8.134313) rotate(0.855097) translate(-11.500000, -8.134313) "
                     ></line>
                     <line
@@ -61,16 +61,16 @@ class LoginOverlay extends React.Component {
                       y2="39.3621506"
                       id="Line"
                       stroke="#FFC650"
-                      stroke-width="4"
-                      stroke-linecap="square"
+                      strokeWidth="4"
+                      strokeLinecap="square"
                       transform="translate(11.765313, 39.332192) rotate(0.855097) translate(-11.765313, -39.332192) "
                     ></line>
                     <text
                       id="theroom"
                       fill="#1D294F"
-                      font-family="CourierNewPSMT, Courier New"
-                      font-size="48"
-                      font-weight="normal"
+                      fontFamily="CourierNewPSMT, Courier New"
+                      fontSize="48"
+                      fontWeight="normal"
                     >
                       <tspan x="25.684596" y="40">
                         theroom

@@ -41,7 +41,7 @@ body {
 }
 
 p {
-  font-family: Avenir Next;
+  fontFamily: Avenir Next;
 }
 
 li {
@@ -99,7 +99,7 @@ li {
 }
 
 .roomHeader {
-  font-weight: 500;
+  fontWeight: 500;
   margin-top: 55px;
 }
 
@@ -107,13 +107,13 @@ li {
   margin-left: 5px;
 
   a {
-    font-family: Avenir Next;
-    font-weight: 200;
+    fontFamily: Avenir Next;
+    fontWeight: 200;
     color: white;
   }
 
   .currentRoom a {
-    font-weight: 300;
+    fontWeight: 300;
   }
 
 }
@@ -136,11 +136,11 @@ li {
 
   .nav-subtitle {
     margin-top: 0px;
-    font-weight: 250;
+    fontWeight: 250;
   }
 
   .roomHeader {
-    font-weight: 500;
+    fontWeight: 500;
     margin-top: 5px;
   }
 
@@ -188,23 +188,23 @@ li {
   width: 100%;
 
   .username {
-    font-weight: 500;
+    fontWeight: 500;
   }
 
   .timestamp{
-    font-weight: 200;
+    fontWeight: 200;
     margin-left: 20px;
   }
 
   .messageText {
-    font-weight: 250;
+    fontWeight: 250;
   }
 
   .form-group {
     padding-right: 30px;
     padding-left: 280px;
-    font-family: Avenir Next;
-    font-size: 16px !important;
+    fontFamily: Avenir Next;
+    fontSize: 16px !important;
   }
 
   .form-control:focus{
