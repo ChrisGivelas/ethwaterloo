@@ -26,10 +26,7 @@ function* getPk(action) {
 }
 
 function* torusSaga() {
-  yield all([
-    takeLatest(actiontypes.TORUS__CONNECT, connect),
-    takeLatest(actiontypes.TORUS__GET_PK, getPk)
-  ])
+  yield all([takeLatest(actiontypes.TORUS__CONNECT, connect), takeLatest(actiontypes.TORUS__GET_PK, getPk)]);
 }
 
 export default torusSaga;
