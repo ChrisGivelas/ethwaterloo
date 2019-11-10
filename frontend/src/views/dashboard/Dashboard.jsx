@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
                 ETHWaterloo
               </p>
               <p className="text-center enterRoomButton">
-                <Button>Enter room</Button>
+                <a href="./"><Button>Enter room</Button></a>
               </p>
             </Card>
             </div>
