@@ -55,6 +55,4 @@ class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({publicInfo: state.public, privateInfo: state.private});
-
 export default Dashboard;

@@ -1,53 +1,29 @@
 import React from "react";
-import {connect} from "react-redux";
-import {Link, Redirect, Route, Switch} from "react-router-dom";
-
-import withAuthorization from "../../components/hoc/withAuthorization";
-
-import Forbidden from "./components/Forbidden";
-import NoMatch from "./components/NoMatch";
+import {Redirect, Route, Switch} from "react-router-dom";
 
 import Front from "../front/Front";
 import Dashboard from "../dashboard/Dashboard";
 import Torus from "../torus/Torus";
 import WalletConnect from "../walletconnect/WalletConnect";
+import ChatArea from "../front/ChatArea";
 
-import * as threeBoxActions from "../../store/3box/3boxActions";
+import fakeData from '../../fakeData';
 
-const Links = props => (
-  <div className="links">
-    <ul>
-      <li>
-        <Link to="/">front</Link>
-      </li>
-      <li>
-        <Link to="/torus">torus</Link>
-      </li>
-      <li>
-        <Link to="/walletconnect">walletconnect</Link>
-      </li>
-      <li>
-        <Link to="/dashboard">dashboard</Link>
-      </li>
-    </ul>
-  </div>
-);
+console.log(fakeData);
 
 class Main extends React.Component {
   render() {
     return (
       <main>
         <Switch>
-          <Route exact path="/404" component={NoMatch} />
-
-          <Route exact path="/" component={withAuthorization("*")(Front)} />
-          <Route exact path="/torus" component={withAuthorization("*")(Torus)} />
-          <Route exact path="/walletconnect" component={withAuthorization("*")(WalletConnect)} />
-          <Route path="/dashboard" component={withAuthorization("*")(Dashboard, Forbidden)} />
+          <Route path="/" component={Front} />
+          <Route path="/torus" component={Torus} />
+          <Route path="/walletconnect" component={WalletConnect} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/room/:roomName" component={ChatArea}/>
 
           <Redirect to="/" />
         </Switch>
-        {/* <Links /> */}
       </main>
     );
   }
