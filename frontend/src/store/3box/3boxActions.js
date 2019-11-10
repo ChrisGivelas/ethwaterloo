@@ -7,7 +7,7 @@ export const connect = addr => {
   };
 };
 
-export const connectSucceeded = (data) => {
+export const connectSucceeded = data => {
   return {
     type: actiontypes.THREEBOX_CONNECT_SUCCEEDED,
     data
@@ -23,7 +23,6 @@ export const connectFailed = err => {
   };
 };
 
-
 export const listSpaces = addr => {
   return {
     type: actiontypes.THREEBOX_LIST_SPACES,
@@ -31,7 +30,7 @@ export const listSpaces = addr => {
   };
 };
 
-export const listSpacesSucceeded = (data) => {
+export const listSpacesSucceeded = data => {
   return {
     type: actiontypes.THREEBOX_LIST_SPACES_SUCCEEDED,
     data
@@ -54,7 +53,7 @@ export const getSpace = addr => {
   };
 };
 
-export const getSpaceSucceeded = (data) => {
+export const getSpaceSucceeded = data => {
   return {
     type: actiontypes.THREEBOX_GET_SPACE_SUCCEEDED,
     data
@@ -77,7 +76,7 @@ export const getThread = addr => {
   };
 };
 
-export const getThreadSucceeded = (data) => {
+export const getThreadSucceeded = data => {
   return {
     type: actiontypes.THREEBOX_GET_THREAD_SUCCEEDED,
     data
@@ -100,7 +99,7 @@ export const getThreadByAddress = addr => {
   };
 };
 
-export const getThreadByAddressSucceeded = (data) => {
+export const getThreadByAddressSucceeded = data => {
   return {
     type: actiontypes.THREEBOX_GET_THREAD_BY_ADDRESS_SUCCEEDED,
     data
